@@ -34,7 +34,7 @@ int print_string(va_list types, char buffer[], int flags,
 		int width, int precision, int size)
 {
 	int i, length = 0;
-	chr *str = va_arg(types, char *);
+	char *str = va_arg(types, char *);
 
 	UNUSED(buffer);
 	UNUSED(flags);
@@ -66,7 +66,7 @@ int print_string(va_list types, char buffer[], int flags,
 		else
 		{
 			for (i = width - length; i > 0; i--)
-				write(, " ", 1);
+				write(1, " ", 1);
 			write(1, &str[0], length);
 			return (width);
 		}
@@ -110,7 +110,7 @@ int print_percent(va_list types, char buffer[], int flags,
 int print_int(va_list types, char buffer[], int flags,
 		int width, int precision, int size)
 {
-	int is_neagative = 0;
+	int is_negative = 0;
 	int i = BUFF_SIZE - 2;
 	long int n = va_arg(types, long int);
 	unsigned long int num;
