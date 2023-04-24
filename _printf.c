@@ -1,6 +1,8 @@
 #include "main.h"
 
+
 void print_buffer(char buffer[], int *buff_ind);
+
 
 /**
  * _printf - function that produces output according to a format
@@ -41,6 +43,7 @@ int _printf(const char *format, ...)
 				return (-1);
 			printed_chars += printed;
 		}
+	}
 
 	print_buffer(buffer, &buff_ind);
 
@@ -48,6 +51,7 @@ int _printf(const char *format, ...)
 	
 	return (printed_chars);
 }
+
 
 /**
  * print_buffer - print the contents of the  buffer if it exist
