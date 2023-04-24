@@ -1,23 +1,25 @@
 #include "main.h"
-		/* -print char- */
+
+/************************* PRINT CHAR *************************/
+
 /**
- * print_char - function that prints a character
- * @size: size of specifier
- * @precision: precisoin specifications
- * @width: width
- * @flags: calculates active flags
- * @buffer: buffer to handle print
- * @types: list of arg
- * Return: number of chars printed
+ * print_char - Prints a char
+ * @types: List a of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: Width
+ * @precision: Precision specification
+ * @size: Size specifier
+ * Return: Number of chars printed
  */
-int print_char(va_list types, char buffer[], int flags,
-		int width, int precision, int size)
+int print_char(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
 {
 	char c = va_arg(types, int);
 
 	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
-		/* -print a string- */
+/************************* PRINT A STRING *************************/
 /**
  * print_string - function that prints a string
  * @size: size of specifier
